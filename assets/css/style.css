@@ -68,7 +68,7 @@ em { font-style: italic; font-family: var(--display); font-weight: 400; }
   margin: 0 auto;
   padding: 1rem var(--gutter);
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 2rem;
 }
@@ -93,6 +93,44 @@ em { font-style: italic; font-family: var(--display); font-weight: 400; }
   color: var(--ink-2);
 }
 .nav__links a:hover { color: var(--accent); }
+
+
+/* Smooth crossfade when the theme changes */
+body, .nav, .project, .portrait, .tag {
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+
+/* Theme toggle button */
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.theme-toggle {
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  background: transparent;
+  color: var(--ink-2);
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  transition: color .2s, border-color .2s, transform .35s ease;
+}
+.theme-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: rotate(20deg);
+}
+.theme-toggle svg { width: 15px; height: 15px; }
+
+/* Show moon in light mode, sun in dark mode */
+.theme-toggle__sun  { display: none; }
+.theme-toggle__moon { display: block; }
+:root[data-theme="dark"] .theme-toggle__sun  { display: block; }
+:root[data-theme="dark"] .theme-toggle__moon { display: none; }
+
+
 
 /* =========================================================
    HERO
@@ -419,21 +457,18 @@ em { font-style: italic; font-family: var(--display); font-weight: 400; }
 .foot a:hover { color: var(--accent); }
 
 /* =========================================================
-   DARK MODE (optional — uncomment to enable system preference)
+   DARK THEME — activated by [data-theme="dark"] on <html>
    ========================================================= */
-/*
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #15110d;
-    --bg-soft: #1f1a14;
-    --ink: #f0ebe0;
-    --ink-2: #c6bfb1;
-    --muted: #8a8377;
-    --rule: rgba(240,235,224,0.12);
-    --accent: #d4736b;
-  }
+:root[data-theme="dark"] {
+  --bg:        #15110d;
+  --bg-soft:   #1f1a14;
+  --ink:       #f0ebe0;
+  --ink-2:     #c6bfb1;
+  --muted:     #8a8377;
+  --rule:      rgba(240, 235, 224, 0.12);
+  --accent:    #d4736b;
+  --accent-2:  #b85a52;
 }
-*/
 
 /* =========================================================
    PRINT (CV-style)

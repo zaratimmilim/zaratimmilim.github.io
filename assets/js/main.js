@@ -29,3 +29,20 @@ sections.forEach((s) => observer.observe(s));
 const style = document.createElement('style');
 style.textContent = `.nav__links a.is-active { color: var(--accent); }`;
 document.head.appendChild(style);
+
+
+// =====================================================
+// Theme toggle
+// =====================================================
+const themeToggle = document.getElementById('theme-toggle');
+
+themeToggle.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  themeToggle.setAttribute(
+    'aria-label',
+    next === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
+  );
+});
