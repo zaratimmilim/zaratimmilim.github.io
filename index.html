@@ -1,20 +1,79 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dr Zara Lim — Algorithm Design and Analysis</title>
 
+  <!-- ============ SEO ============ -->
 
-  <!-- Social previews -->
-  <meta property="og:title" content="Dr Zara Lim">
-  <meta property="og:description" content="Teaching Fellow in Computer Science.">
+  <title>Dr Zara Lim — Teaching Fellow, King's College London</title>
+  <meta name="description" content="Dr Zara Lim is a Teaching Fellow at King's College London researching string and graph algorithms, pattern matching and bioinformatics, and teaching computer science.">
+  <meta name="author" content="Zara Lim">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://zaratimmilim.github.io/">
+
+  <!-- Social previews (Open Graph / LinkedIn / Facebook) -->
   <meta property="og:type" content="profile">
-  
-  <!-- NEW: set theme -->
+  <meta property="og:site_name" content="Dr Zara Lim">
+  <meta property="og:title" content="Dr Zara Lim, Teaching Fellow">
+  <meta property="og:description" content="Teaching Fellow at King's College London. Research in algorithms, stringology, pattern matching and bioinformatics.">
+  <meta property="og:url" content="https://zaratimmilim.github.io/">
+  <meta property="og:image" content="https://zaratimmilim.github.io/assets/images/me.jpg">
+  <meta property="og:locale" content="en_GB">
+  <meta property="profile:first_name" content="Zara">
+  <meta property="profile:last_name" content="Lim">
+
+  <!-- Social previews (X / Twitter) -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dr Zara Lim — Teaching Fellow in Computer Science">
+  <meta name="twitter:description" content="Teaching Fellow at King's College London. Research in algorithms, stringology, pattern matching and bioinformatics.">
+  <meta name="twitter:image" content="https://zaratimmilim.github.io/assets/images/me.jpg">
+
+  <!-- Structured data: tells Google this page is about a person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "url": "https://zaratimmilim.github.io/",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Zara Lim",
+      "honorificPrefix": "Dr",
+      "jobTitle": "Teaching Fellow",
+      "url": "https://zaratimmilim.github.io/",
+      "image": "https://zaratimmilim.github.io/assets/images/me.jpg",
+      "email": "mailto:zara.t.lim@kcl.ac.uk",
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "King's College London",
+        "department": { "@type": "Organization", "name": "Department of Informatics" }
+      },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "King's College London" },
+      "workLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bush House, 30 Aldwych",
+          "addressLocality": "London",
+          "postalCode": "WC2B 4BG",
+          "addressCountry": "GB"
+        }
+      },
+      "knowsAbout": ["Algorithms", "Combinatorics", "Stringology", "Pattern Matching", "Graph Algorithms", "Bioinformatics", "Computer Science Education"],
+      "sameAs": [
+        "https://scholar.google.com/citations?user=2sN--UwAAAAJ",
+        "https://orcid.org/0000-0001-6528-6060",
+        "https://www.linkedin.com/in/zara-lim/"
+      ]
+    }
+  }
+  </script>
+
+  <!-- Set theme -->
   <script>
   (function () {
-    const saved = localStorage.getItem('theme');
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
     const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     document.documentElement.setAttribute('data-theme', saved || system);
   })();
@@ -32,10 +91,9 @@
   <!-- ============ NAVIGATION ============ -->
   <header class="nav">
     <div class="nav__inner">
-      <a href="#top" class="nav__brand">ZL<span>.</span></a>
+      <a href="#top" class="nav__brand" aria-label="Zara Lim — home">ZL<span>.</span></a>
       <div class="nav__right">
-        <div class="nav__right">
-        <nav>
+        <nav aria-label="Main">
           <ul class="nav__links">
             <li><a href="#about">About</a></li>
             <li><a href="#education">Education</a></li>
@@ -46,7 +104,7 @@
           </ul>
         </nav>
 
-        <!-- NEW: theme toggle -->
+        <!-- Theme toggle -->
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme">
           <svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
               stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
@@ -70,7 +128,7 @@
       <p class="eyebrow">Teaching Fellow · Bioinformatics · Algorithms · Theoretical Computer Science</p>
       <div class="hero__grid">
         <div class="hero__intro">
-          
+
           <h1 class="display">
             Zara <em>Lim</em>,<br>
             <span class="display--muted">PhD</span>
@@ -93,9 +151,8 @@
       </header>
       <div class="section__body two-col">
         <div class="two-col__media">
-          <!-- Replace with your photo -->
-          <div class="portrait" aria-label="Portrait placeholder">
-            <img src="assets/images/me.jpg" alt="" onerror="this.style.display='none'">
+          <div class="portrait">
+            <img src="assets/images/me.jpg" alt="Photo of Zara Lim" width="400" height="400" onerror="this.style.display='none'">
           </div>
         </div>
         <div class="two-col__text prose">
@@ -105,20 +162,20 @@
             on the King's International Foundation (KIF) programme.
           </p>
           <p>
-            My doctoral work focused on efficient approximate pattern matching 
-            algorithms for strings and graphs; these techniques have various 
+            My doctoral work focused on efficient approximate pattern matching
+            algorithms for strings and graphs; these techniques have various
             interdisciplinary applications such as biology or music.
 
-            I am open to explore new research collaborations, particularly 
-            anything related to bioinformatics, or computer science education. 
+            I am open to explore new research collaborations, particularly
+            anything related to bioinformatics, or computer science education.
             Please get in touch if you want to chat about anything!
           </p>
           <p>
             Outside of work, I enjoy playing videogames (current favourite: Clair Obscur: Expedition 33)
           </p>
-          
+
           <p>
-            Research Interests: 
+            Research Interests:
             <span class="tag">Combinatorics</span>,
             <span class="tag">Algorithms</span>,
             <span class="tag">Stringology</span>,
@@ -127,7 +184,7 @@
             <span class="tag">Computer Science Education</span>
           </p>
           <p>
-            Erdös Number: 
+            Erdős Number:
             <span class="tag">3</span>
           </p>
         </div>
@@ -136,16 +193,16 @@
 
 
 
-<!-- ============ EDUCATION ============ -->
+    <!-- ============ EDUCATION ============ -->
     <section id="education" class="section">
       <header class="section__head">
         <span class="section__num">02</span>
         <h2 class="section__title">Education</h2>
       </header>
-      
+
       <div class="section__body">
         <ul class="courses">
-          
+
           <li>
             <span class="course__code">2021-2026</span>
             <span class="course__name">Bioinformatics PhD, King's College London</span>
@@ -155,13 +212,13 @@
           <li>
             <span class="course__code">2016-2020</span>
             <span class="course__name">Electronic Engineering MEng, King's College London</span>
-          </li>         
+          </li>
         </ul>
 
       </div>
     </section>
-    
-    
+
+
 
 
     <!-- ============ PUBLICATIONS ============ -->
@@ -184,15 +241,12 @@
         <h3 class="year">2024</h3>
         <ol class="pubs">
           <li class="pub">
-            <span class="pub__authors">Alzamel, M., C., Iliopoulos, C.S., and <strong>Lim, Z.</strong></span>.
+            <span class="pub__authors">Alzamel, M., Iliopoulos, C.S., and <strong>Lim, Z.</strong></span>.
             <span class="pub__title">Deep learning Approaches and Data Augmentation for Melanoma Detection</span>.
-            <em class="pub__venue">Neural Computing and Applications.</em>, 2024.
-            <span class="pub__links">
-
-            </span>
+            <em class="pub__venue">Neural Computing and Applications</em>, 2024.
           </li>
           <li class="pub">
-            <span class="pub__authors">Alzamel, M.,  Iliopoulos, C.S., <strong>Lim, Z.</strong>, and Moser-Schwaiger, M.</span>.
+            <span class="pub__authors">Alzamel, M., Iliopoulos, C.S., <strong>Lim, Z.</strong>, and Moser-Schwaiger, M.</span>.
             <span class="pub__title">Pattern Matching in Polyphonic Musical Sequences</span>.
             <em class="pub__venue">IFIP International Conference on Artificial Intelligence Applications and Innovations (AIAI)</em>, 2024.
           </li>
@@ -206,10 +260,9 @@
         <h3 class="year">2023</h3>
         <ol class="pubs">
           <li class="pub">
-            <span class="pub__authors">Alzamel, M., Hampson, C., Iliopoulos, C.S., <strong>Lim, Z.</strong>, Pissis, S., and Vlachakis, D.</strong></span>.
+            <span class="pub__authors">Alzamel, M., Hampson, C., Iliopoulos, C.S., <strong>Lim, Z.</strong>, Pissis, S., and Vlachakis, D.</span>.
             <span class="pub__title">Maximal Degenerate Palindromes with Gaps and Mismatches</span>.
             <em class="pub__venue">Foundational Methods in Systems Biology Special Issue of Theoretical Computer Science</em>, 2023.
-            </span>
           </li>
           <li class="pub">
             <span class="pub__authors">Hampson, C., Harvey, D.J., Iliopoulos, C.S., Jansson, J., <strong>Lim, Z.</strong>, and Sung, W.K.</span>.
@@ -219,37 +272,36 @@
           <li class="pub">
             <span class="pub__authors">Alzamel, M., Alhejaili, S., Alhumaidhi, F., Alismail, J., Almubarak, L., Altammami, H., Iliopoulos, C.S., and <strong>Lim, Z.</strong></span>.
             <span class="pub__title">Advanced Skin Cancer Detection Using Deep Learning</span>.
-            <em class="pub__venue">International Conference on Engineering Applications of Neural Networks (EANN) </em>, 2023.
+            <em class="pub__venue">International Conference on Engineering Applications of Neural Networks (EANN)</em>, 2023.
           </li>
           <li class="pub">
             <span class="pub__authors">Alzamel, M., Daykin, J.W., Hampson, C., Iliopoulos, C.S., <strong>Lim, Z.</strong>, and Smyth, W.F.</span>.
             <span class="pub__title">Local Maximal Equality Free Periodicities</span>.
-            <em class="pub__venue">International Conference on Artificial IFIP Intelligence Applications and Innovations (AIAI) </em>, 2023.
+            <em class="pub__venue">IFIP International Conference on Artificial Intelligence Applications and Innovations (AIAI)</em>, 2023.
           </li>
           <li class="pub">
             <span class="pub__authors">Alzamel, M., Daykin, J.W., Hampson, C., Iliopoulos, C.S., <strong>Lim, Z.</strong>, and Smyth, W.F.</span>.
             <span class="pub__title">Finding the Cyclic Covers of a String</span>.
             <em class="pub__venue">International Conference and Workshops on Algorithms and Computation (WALCOM)</em>, 2023.
           </li>
-          </ol>
-          
+        </ol>
+
         <h3 class="year">2020</h3>
         <ol class="pubs">
           <li class="pub">
-            <span class="pub__authors">Shi, G., Palombi, A., <strong>Lim, Z.</strong>, Astolfi, A., Burani, A., Campagnini, S., Loizzo, F.G., Preti, M.L., Vargas, A.M., Peperoni, E., and Oddo, C.M.</strong></span>.
+            <span class="pub__authors">Shi, G., Palombi, A., <strong>Lim, Z.</strong>, Astolfi, A., Burani, A., Campagnini, S., Loizzo, F.G., Preti, M.L., Vargas, A.M., Peperoni, E., and Oddo, C.M.</span>.
             <span class="pub__title">Fluidic haptic interface for mechano-tactile feedback</span>.
             <em class="pub__venue">IEEE Transactions on Haptics</em>, 2020.
-            </span>
           </li>
           <li class="pub">
             <span class="pub__authors">Peters, J., Anvari, B., Chen, C., <strong>Lim, Z.</strong>, and Wurdemann, H.A.</span>.
             <span class="pub__title">Hybrid fluidic actuation for a foam-based soft actuator</span>.
-            <em class="pub__venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>, 2023.
+            <em class="pub__venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</em>, 2020.
           </li>
 
         </ol>
 
-        <p class="more"><a href="https://scholar.google.com/citations?user=2sN--UwAAAAJ&hl=en&oi=ao">Google Scholar →</a></p>
+        <p class="more"><a href="https://scholar.google.com/citations?user=2sN--UwAAAAJ&amp;hl=en" rel="me">Google Scholar →</a></p>
       </div>
     </section>
 
@@ -261,7 +313,7 @@
       </header>
       <div class="section__body">
         <ul class="courses">
-          
+
           <li>
             <span class="course__code">0CCS0CSE</span>
             <span class="course__name">Introduction to Computer Science</span>
@@ -326,23 +378,22 @@
         <ul class="projects">
           <li class="project">
             <h3>Exact and Approximate Pattern Matching Algorithms for Bioinformatics and Beyond</h3>
-            <p class="project__meta">PhD Thesis · 2026 </p>
+            <p class="project__meta">PhD Thesis · 2026</p>
           </li>
           <li class="project">
             <h3>Dominoes: Solving instances of the Post Correspondence Problem</h3>
-            <p class="project__meta">Master's Dissertation · 2021 </p>
+            <p class="project__meta">Master's Dissertation · 2021</p>
           </li>
           <li class="project">
             <h3>Freestation 2.0</h3>
-            <p>Hardware and Software development for a low cost local environmental data collection tool.
-            </p>
-            <p class="project__meta">King's College London, Department of Geography · 2020 </p>
+            <p>Hardware and Software development for a low cost local environmental data collection tool.</p>
+            <p class="project__meta">King's College London, Department of Geography · 2020</p>
           </li>
 
           <li class="project">
             <h3>STIFF-ness controllable Flexible and Learn-able Manipulator for surgical OPerations</h3>
-            <p>Explored the design and applications of soft robotics tools for minimally invasive laparoscopic surgery. </p>
-            <p class="project__meta">King's College London, Centre for Robotics Research · 2015 </p>
+            <p>Explored the design and applications of soft robotics tools for minimally invasive laparoscopic surgery.</p>
+            <p class="project__meta">King's College London, Centre for Robotics Research · 2015</p>
           </li>
         </ul>
       </div>
@@ -350,7 +401,7 @@
 
 
 
-<!-- ============ AWARDS ============ -->
+    <!-- ============ AWARDS ============ -->
     <section id="awards" class="section">
       <header class="section__head">
         <span class="section__num">06</span>
@@ -358,10 +409,10 @@
       </header>
       <div class="section__body">
         <ul class="courses">
-          
+
           <li>
             <span class="course__code">2023</span>
-            <span class="course__name">Quality of Presentation, NMES Research Competition </span>
+            <span class="course__name">Quality of Presentation, NMES Research Competition</span>
             <span class="course__role">King's College London</span>
           </li>
           <li>
@@ -400,8 +451,6 @@
             <span class="course__role">King's College London, Department of Informatics</span>
           </li>
 
-              
-
         </ul>
 
 
@@ -420,11 +469,11 @@
       </header>
       <div class="section__body">
         <ul class="contact">
-          <li><span>Email</span><a href="mailto:zara.t.lim@.ac.uk">zara.t.lim@kcl.ac.uk</a></li>
-          <li><span>Office</span>Department of Informatics@King's College London, Bush House, 30 Aldwych, London, WC2B 4BG</li>
-          <li><span>Google Scholar</span><a href="https://scholar.google.com/citations?user=2sN--UwAAAAJ&hl=en&oi=ao">scholar profile</a></li>
-          <li><span>ORCID</span><a href="https://orcid.org/0000-0001-6528-6060">0000-0001-6528-6060</a></li>
-          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/zara-lim/">/in/zara-lim/</a></li>
+          <li><span>Email</span><a href="mailto:zara.t.lim@kcl.ac.uk">zara.t.lim@kcl.ac.uk</a></li>
+          <li><span>Office</span>Department of Informatics, King's College London, Bush House, 30 Aldwych, London, WC2B 4BG</li>
+          <li><span>Google Scholar</span><a href="https://scholar.google.com/citations?user=2sN--UwAAAAJ&amp;hl=en" rel="me">scholar profile</a></li>
+          <li><span>ORCID</span><a href="https://orcid.org/0000-0001-6528-6060" rel="me">0000-0001-6528-6060</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/zara-lim/" rel="me">/in/zara-lim/</a></li>
         </ul>
       </div>
     </section>
